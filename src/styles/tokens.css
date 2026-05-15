@@ -1,0 +1,73 @@
+:root {
+  /* ─── Surface ─────────────────────────────────────────── */
+  --bg: #060a0e;
+  --bg-elev: #0c141d;
+  --bg-panel: #0f1924;
+  --bg-panel-hi: #142133;
+  --hairline: #1d2c3d;
+  --hairline-hi: #28415c;
+  --ink: #d6e6f5;
+  --ink-mute: #7a93ad;
+  --ink-dim: #4a637c;
+
+  /* ─── Accents ─────────────────────────────────────────── */
+  --green: #7CFF6B;
+  --green-deep: #34c026;
+  --green-glow: rgba(124, 255, 107, 0.35);
+  --blue: #5CE0FF;
+  --blue-deep: #1d99c2;
+  --blue-glow: rgba(92, 224, 255, 0.32);
+  --amber: #FFB347;
+  --magenta: #FF61C7;
+
+  /* ─── Type ────────────────────────────────────────────── */
+  --font-display: 'VT323', 'Departure Mono', ui-monospace, monospace;
+  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+
+  --fs-mega: clamp(3.25rem, 9vw, 8.5rem);
+  --fs-hero: clamp(2.25rem, 6vw, 5rem);
+  --fs-title: clamp(1.75rem, 3vw, 2.75rem);
+  --fs-sub: clamp(1.05rem, 1.5vw, 1.25rem);
+  --fs-body: 0.975rem;
+  --fs-mono: 0.875rem;
+  --fs-eyebrow: 0.72rem;
+
+  /* ─── Space ───────────────────────────────────────────── */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 128px;
+
+  /* ─── Geometry ────────────────────────────────────────── */
+  --r-sm: 2px;
+  --r-md: 4px;
+  --r-lg: 8px;
+  --border-w: 1px;
+
+  /* ─── Motion ──────────────────────────────────────────── */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in: cubic-bezier(0.5, 0, 0.75, 0);
+  --ease-snap: cubic-bezier(0.85, 0, 0.15, 1);
+  --dur-fast: 140ms;
+  --dur-base: 240ms;
+  --dur-slow: 480ms;
+
+  /* ─── Layout ──────────────────────────────────────────── */
+  --shell-max: 1320px;
+  --shell-pad: clamp(20px, 4vw, 56px);
+  --rail-w: 220px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
+  }
+}

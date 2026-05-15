@@ -1,0 +1,85 @@
+.page {
+  position: relative;
+  min-height: 100dvh;
+  padding: var(--s-9) var(--shell-pad);
+  max-width: var(--shell-max);
+  margin: 0 auto;
+  display: grid;
+  gap: var(--s-7);
+  align-content: start;
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.4;
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1), transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1), transparent 70%);
+}
+
+.eyebrow {
+  display: inline-flex;
+  gap: var(--s-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--fs-mega);
+  line-height: 0.9;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.title .accent { color: var(--green); }
+.title .blue { color: var(--blue); }
+
+.lede {
+  font-size: var(--fs-sub);
+  max-width: 64ch;
+  line-height: 1.65;
+}
+
+.cheatsheet {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--s-3);
+  background: var(--bg-panel);
+  padding: var(--s-5);
+  border: 1px solid var(--hairline);
+  font-family: var(--font-mono);
+}
+
+.cheatRow {
+  display: grid;
+  grid-template-columns: minmax(0, 22ch) 1fr;
+  gap: var(--s-4);
+  padding: var(--s-2) 0;
+  border-bottom: 1px dashed var(--hairline);
+  font-size: var(--fs-mono);
+}
+.cheatRow:last-child { border-bottom: 0; }
+.cheatCmd { color: var(--green); }
+.cheatDef { color: var(--ink-mute); }
+
+.ctaRow { display: flex; gap: var(--s-3); flex-wrap: wrap; }
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: 14px 22px;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--green);
+  border: 1px solid var(--green);
+  text-decoration: none;
+  cursor: pointer;
+}
+.cta.alt { background: transparent; color: var(--blue); border-color: var(--blue); }

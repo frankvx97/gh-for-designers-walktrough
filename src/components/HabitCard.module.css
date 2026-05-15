@@ -1,0 +1,97 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--s-3);
+  perspective: 1200px;
+}
+
+.card {
+  position: relative;
+  height: 240px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-align: left;
+  outline: none;
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+}
+.card.flipped .inner { transform: rotateY(180deg); }
+
+.face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--s-4);
+  background: var(--bg-panel);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-md);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+.card:hover .face { border-color: var(--green); }
+.faceBack {
+  transform: rotateY(180deg);
+  background: var(--bg-elev);
+  border-color: var(--amber);
+}
+.card:hover .faceBack { border-color: var(--amber); }
+
+.num {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  color: var(--green);
+  line-height: 1;
+}
+.faceBack .num { color: var(--amber); }
+
+.rule {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1.05;
+}
+
+.detail {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.06em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.flipHint {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  align-self: flex-end;
+}
+.faceBack .flipHint { color: var(--amber); }
+
+.failureLabel {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+.failureText {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink);
+  line-height: 1.5;
+}

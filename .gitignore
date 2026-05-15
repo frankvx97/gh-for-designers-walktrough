@@ -1,0 +1,26 @@
+# dependencies
+node_modules
+
+# build output
+dist
+
+# tooling caches
+.vite
+tsconfig.tsbuildinfo
+
+# editor / OS
+.DS_Store
+.idea
+.vscode
+
+# env
+*.local
+.env
+.env.*
+
+# project-local
+.claude
+.agents
+.screenshots
+.netlify
+skills-lock.json

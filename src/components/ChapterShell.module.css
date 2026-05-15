@@ -1,0 +1,194 @@
+.shell {
+  position: relative;
+  min-height: 100dvh;
+  padding-bottom: var(--s-10);
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding: var(--s-4) var(--shell-pad);
+  background: linear-gradient(180deg, var(--bg) 60%, rgba(6, 10, 14, 0));
+  backdrop-filter: blur(8px);
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  color: var(--green);
+  text-decoration: none;
+  border: none;
+}
+.brand:hover { color: var(--green); border: none; }
+.brand .slash { color: var(--blue); }
+
+.crumb {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.16em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+}
+.crumb b {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--hairline);
+  z-index: 41;
+  pointer-events: none;
+}
+.progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green), var(--blue));
+  transform-origin: left center;
+  box-shadow: 0 0 12px var(--green-glow);
+}
+
+.body {
+  position: relative;
+}
+
+.heroSection {
+  position: relative;
+  padding: var(--s-9) var(--shell-pad) var(--s-7);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--s-5);
+  max-width: var(--shell-max);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.eyebrowChip {
+  padding: 4px 8px;
+  border: 1px solid var(--green);
+  color: var(--green);
+  background: rgba(124, 255, 107, 0.06);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+.title .accent { color: var(--green); }
+
+.lede {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sub);
+  line-height: 1.55;
+  max-width: 60ch;
+  color: var(--ink);
+}
+
+.heroDither {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.55;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,0.9), transparent 90%);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.9), transparent 90%);
+  z-index: -1;
+}
+
+.section {
+  max-width: var(--shell-max);
+  margin: 0 auto;
+  padding: var(--s-7) var(--shell-pad);
+}
+
+.sectionWide { max-width: var(--shell-max); margin: 0 auto; padding: var(--s-7) var(--shell-pad); }
+.sectionTight { max-width: 900px; margin: 0 auto; padding: var(--s-7) var(--shell-pad); }
+
+.divider {
+  position: relative;
+  height: 80px;
+  margin: var(--s-7) 0;
+  overflow: hidden;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-5);
+  max-width: var(--shell-max);
+  margin: var(--s-9) auto 0;
+  padding: var(--s-7) var(--shell-pad);
+  border-top: 1px solid var(--hairline);
+}
+
+.navRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-4);
+}
+
+.navCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding: var(--s-5);
+  background: var(--bg-panel);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-md);
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color var(--dur-fast) var(--ease-out), transform var(--dur-base) var(--ease-out);
+}
+.navCard:hover {
+  border-color: var(--green);
+  transform: translateY(-2px);
+  border-bottom: 1px solid var(--green);
+}
+.navCardLabel {
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.navCardRight { text-align: right; }
+.navCardRight .navCardLabel::before { content: ''; }
+.navCardTitle {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: var(--green);
+}
+.navCardRight .navCardTitle { color: var(--blue); }
+
+.navCardEmpty {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  .navRow { grid-template-columns: 1fr; }
+  .topbar { padding: var(--s-3) var(--s-4); }
+}

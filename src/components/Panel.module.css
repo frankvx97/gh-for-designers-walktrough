@@ -1,0 +1,32 @@
+/* Reusable panel surface */
+.panel {
+  position: relative;
+  background: var(--bg-panel);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-md);
+  padding: var(--s-5);
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  margin-bottom: var(--s-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.panelTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  color: var(--green);
+}
+.panelTitle::before { content: '◆'; font-size: 0.9em; }
+.panelTitle.blue { color: var(--blue); }
+.panelTitle.blue::before { content: '◇'; }
+.panelTitle.amber { color: var(--amber); }

@@ -1,0 +1,79 @@
+.rig {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+  filter:
+    drop-shadow(0 0 24px rgba(124, 255, 107, 0.18))
+    drop-shadow(0 0 32px rgba(92, 224, 255, 0.18));
+}
+
+/* Subtle floating animation when idle. */
+@keyframes float {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(0, -6px, 0); }
+}
+.float { animation: float 6s ease-in-out infinite; }
+
+/* The four CSS variables passed in from the component are pixel values
+   (viewBox units). Register them as <length> so the browser interpolates
+   transform: translateY(var(...)) smoothly across keyframes instead of
+   treating them as opaque strings. */
+@property --push-start-y { syntax: '<length>'; inherits: true; initial-value: 0px; }
+@property --push-end-y   { syntax: '<length>'; inherits: true; initial-value: 0px; }
+@property --pull-start-y { syntax: '<length>'; inherits: true; initial-value: 0px; }
+@property --pull-end-y   { syntax: '<length>'; inherits: true; initial-value: 0px; }
+
+/* Traveling push/pull arrows. Each arrow is rendered at the origin and the
+   wrapping <g> is translated along the gap between platforms. The arrows
+   alternate across one 2.4s cycle:
+     0 — 1.2s : green push arrow rises from Git → GitHub
+     1.2 — 2.4s : blue pull arrow falls from GitHub → Git
+   Each phase uses an ease-out so the arrow leaves quickly and decelerates,
+   reading as a "sent packet" arriving at the other platform.
+
+   Start/end Y positions are passed in as CSS variables from the component so
+   the keyframes stay decoupled from the SVG layout. */
+
+@keyframes pushTravel {
+  0%             { transform: translateY(var(--push-start-y)); opacity: 0; }
+  4%             { transform: translateY(var(--push-start-y)); opacity: 1; }
+  44%            { transform: translateY(var(--push-end-y));   opacity: 1; }
+  50%, 100%      { transform: translateY(var(--push-end-y));   opacity: 0; }
+}
+@keyframes pullTravel {
+  0%, 50%        { transform: translateY(var(--pull-start-y)); opacity: 0; }
+  54%            { transform: translateY(var(--pull-start-y)); opacity: 1; }
+  94%            { transform: translateY(var(--pull-end-y));   opacity: 1; }
+  100%           { transform: translateY(var(--pull-end-y));   opacity: 0; }
+}
+
+.pushArrow {
+  animation: pushTravel 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+}
+.pullArrow {
+  animation: pullTravel 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+}
+
+/* Reduced-motion fallback: park each arrow at its start position, no motion. */
+.staticPush { transform: translateY(var(--push-start-y)); }
+.staticPull { transform: translateY(var(--pull-start-y)); }
+
+@media (prefers-reduced-motion: reduce) {
+  .float      { animation: none; }
+  .pushArrow  { animation: none; transform: translateY(var(--push-start-y)); }
+  .pullArrow  { animation: none; transform: translateY(var(--pull-start-y)); }
+}
