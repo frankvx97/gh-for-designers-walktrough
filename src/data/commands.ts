@@ -9,6 +9,15 @@ export interface CommandRow {
     body: string;
     fix: { command?: string; output?: string; prompt?: string }[];
   };
+  extension?: {
+    eyebrow: string;
+    headline: string;
+    body: string;
+    terms: {
+      title: string;
+      steps: { command?: string; output?: string; prompt?: string }[];
+    }[];
+  };
   tone: 'green' | 'blue' | 'amber';
 }
 
@@ -117,6 +126,30 @@ export const COMMANDS: CommandRow[] = [
       { prompt: '$ gh pr create --fill' },
       { prompt: '', out: 'https://github.com/yourname/my-design-system/pull/42' },
     ],
+    extension: {
+      eyebrow: '// after review — merge it',
+      headline: 'A PR ends in a merge.',
+      body: 'Once reviewers approve, the PR is merged: your branch\'s commits are folded into main and the parallel universe collapses back into the canonical timeline. In the browser, click Merge pull request. From the terminal, use the gh CLI or the raw git commands below.',
+      terms: [
+        {
+          title: '> merge via gh',
+          steps: [
+            { command: 'gh pr merge 42 --squash --delete-branch' },
+            { prompt: '', output: '✓ Squashed and merged pull request #42\n✓ Deleted branch feat/button-component' },
+          ],
+        },
+        {
+          title: '> or merge with git',
+          steps: [
+            { command: 'git checkout main' },
+            { command: 'git pull' },
+            { command: 'git merge --squash feat/button-component' },
+            { command: 'git commit -m "feat(button): add Button atom (#42)"' },
+            { command: 'git push' },
+          ],
+        },
+      ],
+    },
     tone: 'blue',
   },
 ];

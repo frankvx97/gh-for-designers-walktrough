@@ -1,0 +1,193 @@
+.frame {
+  display: flex;
+  flex-direction: column;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  overflow: hidden;
+  font-family: -apple-system, 'Segoe UI', system-ui, sans-serif;
+  color: #c9d1d9;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.chrome {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+}
+.chrome .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #30363d;
+}
+.chrome .url {
+  flex: 1;
+  margin-left: 12px;
+  padding: 4px 10px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #8b949e;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.repoHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #21262d;
+  flex-wrap: wrap;
+}
+.repoIcon {
+  width: 16px;
+  height: 16px;
+  color: #8b949e;
+}
+.repoOwner { color: #58a6ff; font-weight: 600; }
+.repoSlash { color: #8b949e; }
+.repoName { color: #58a6ff; font-weight: 600; }
+.repoTag {
+  margin-left: 8px;
+  padding: 0 7px;
+  font-size: 12px;
+  border: 1px solid #30363d;
+  border-radius: 2em;
+  color: #8b949e;
+}
+
+.actions {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #c9d1d9;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: default;
+}
+.btn.primary {
+  background: #238636;
+  border-color: rgba(240,246,252,0.1);
+  color: #fff;
+}
+.btnCount {
+  margin-left: 4px;
+  padding: 0 6px;
+  background: #0d1117;
+  border-left: 1px solid #30363d;
+  border-radius: 0 6px 6px 0;
+  color: #c9d1d9;
+  font-weight: 600;
+}
+
+.btn.highlight {
+  position: relative;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--blue) 35%, transparent);
+}
+
+.body {
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.dropdown {
+  align-self: flex-end;
+  width: min(360px, 100%);
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(1,4,9,0.5);
+  overflow: hidden;
+}
+.dropdownHeader {
+  padding: 10px 14px;
+  border-bottom: 1px solid #21262d;
+  font-weight: 600;
+  font-size: 13px;
+}
+.dropdownSub {
+  color: #8b949e;
+  font-weight: 400;
+  font-size: 12px;
+  margin-top: 2px;
+}
+.dropdownField {
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-bottom: 1px solid #21262d;
+}
+.dropdownLabel {
+  font-size: 12px;
+  color: #8b949e;
+}
+.dropdownValue {
+  padding: 5px 10px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #c9d1d9;
+}
+.dropdownCta {
+  padding: 12px 14px;
+  display: flex;
+  justify-content: flex-end;
+}
+.dropdownCta .btn.primary {
+  font-weight: 600;
+}
+
+.callout {
+  position: absolute;
+  pointer-events: none;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.frameWrap {
+  position: relative;
+}
+.arrow {
+  position: absolute;
+  top: 50px;
+  right: -8px;
+  width: 90px;
+  height: 1px;
+  background: var(--blue);
+}
+.arrow::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -3px;
+  width: 6px;
+  height: 6px;
+  border-right: 1px solid var(--blue);
+  border-top: 1px solid var(--blue);
+  transform: rotate(45deg);
+}

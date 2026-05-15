@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import DitherShader from '../components/DitherShader';
+import CompletionBadge from '../components/CompletionBadge';
 import { COMMANDS } from '../data/commands';
 import styles from './Outro.module.css';
 
@@ -56,6 +57,7 @@ export default function Outro() {
       </motion.div>
 
       <div className={styles.ctaRow}>
+        <CompletionBadge />
         <Link to="/" className={styles.cta}>↻ Restart from CH 01</Link>
         <Link to="/chapter/git-vs-github" className={`${styles.cta} ${styles.alt}`}>▸ Re-read theory</Link>
       </div>

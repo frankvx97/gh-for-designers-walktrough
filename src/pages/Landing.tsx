@@ -170,7 +170,32 @@ export default function Landing() {
       </section>
 
       <footer className={styles.footer}>
-        <span>© design-systems · figma → code workshop</span>
+        <span className={styles.footerBrand}>
+          <svg
+            className={styles.footerLogo}
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path d="M3.3729 13.3334L1.0625 11.9991L1.06449 7.99962L7.99169 4.00012V6.66668L3.3729 9.3339V13.3334Z" fill="currentColor" />
+            <path d="M7.99169 2.66656L1.0625 6.66739L1.06449 3.9995L7.99169 0L11.4556 2.00008V4.66664L7.99169 2.66656Z" fill="currentColor" />
+            <path d="M7.98638 13.3374L14.9289 9.33256L14.9269 12.0004L7.99967 15.9999L4.5271 13.9999V11.334L12.6185 6.66601V2.6665L14.9289 4.00078L14.9269 8.00028L6.83683 12.6669L7.98638 13.3374Z" fill="currentColor" />
+          </svg>
+          <span>
+            © design-systems · figma → code workshop · facilitated by{' '}
+            <a
+              href="https://www.linkedin.com/in/frank-px/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.footerLink}
+            >
+              Franklin Perez
+            </a>
+          </span>
+        </span>
         <span>scroll-pace: medium · audio: off</span>
       </footer>
     </main>
