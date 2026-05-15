@@ -298,6 +298,27 @@
   margin: 0 auto;
 }
 
+.footerBrand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+.footerLogo {
+  display: block;
+  flex-shrink: 0;
+}
+
+.footerLink {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footerLink:hover {
+  color: var(--ink);
+}
+
 @media (max-width: 1000px) {
   .hero {
     grid-template-columns: 1fr;

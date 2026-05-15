@@ -115,3 +115,66 @@
 }
 
 .setupTerms { display: grid; gap: var(--s-3); }
+
+.extension {
+  border: 1px dashed var(--blue);
+  background: color-mix(in oklab, var(--blue) 6%, var(--bg-elev));
+}
+.extensionEyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.pill.wide {
+  grid-column: 1 / -1;
+}
+
+.collab {
+  margin-top: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-5);
+  padding: var(--s-5);
+  border: 1px solid var(--blue);
+  background: color-mix(in oklab, var(--blue) 5%, var(--bg-elev));
+}
+.collabIntro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding-bottom: var(--s-4);
+  border-bottom: 1px dashed color-mix(in oklab, var(--blue) 40%, transparent);
+}
+.collabBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.collabEyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+.collabBody {
+  font-size: var(--fs-sub);
+  color: var(--ink);
+  line-height: 1.55;
+}
+.forkSteps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+.forkStepLabel {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: var(--s-2);
+}
