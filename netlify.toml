@@ -3,7 +3,7 @@
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "22"
   # Corepack picks up pnpm@11.1.2 from package.json's "packageManager" field.
 
 # SPA: route every path back to index.html so client-side routing works.
